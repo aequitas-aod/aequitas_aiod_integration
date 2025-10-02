@@ -1,0 +1,58 @@
+{
+  "platform": null,
+  "platform_resource_identifier": null,
+  "name": "The name of this resource",
+  "date_published": "2022-01-01T15:15:00.000",
+  "same_as": "https://www.example.com/resource/this_resource",
+  "is_accessible_for_free": true,
+  "version": "1.1.0",
+  "issn": "20493630",
+  "measurement_technique": "mass spectrometry",
+  "temporal_coverage": "2011/2012",
+  "aiod_entry": null,
+  "alternate_name": [
+    "alias 1",
+    "alias 2"
+  ],
+  "application_area": [
+    "Fraud Prevention",
+    "Voice Assistance",
+    "Disease Classification"
+  ],
+  "citation": [],
+  "contact": [],
+  "creator": [],
+  "description": null,
+  "distribution": [],
+  "funder": [],
+  "has_part": [],
+  "industrial_sector": [
+    "Pharmaceuticals",
+    "Computer Programming",
+    "Cybersecurity"
+  ],
+  "is_part_of": [],
+  "keyword": [
+    "keyword1",
+    "keyword2"
+  ],
+  "license": "CC-BY-4.0",
+  "media": [],
+  "note": [],
+  "relevant_link": [
+    "https://www.example.com/a_relevant_link",
+    "https://www.example.com/another_relevant_link"
+  ],
+  "relevant_resource": [],
+  "relevant_to": [],
+  "research_area": [
+    "AI Services",
+    "Multi-agent Systems"
+  ],
+  "scientific_domain": [
+    "Computer and Information Sciences",
+    "Mathematics"
+  ],
+  "size": null,
+  "spatial_coverage": null
+}

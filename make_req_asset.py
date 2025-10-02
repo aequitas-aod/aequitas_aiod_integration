@@ -31,8 +31,8 @@ def add_asset(entity_type, entity_data, token):
     else:
         print("Error creating asset:", response.text)
 
-def edit_asset(entity_type, entity_data, token):
-    identifier="<id>"
+def edit_asset(entity_type, entity_data, token, identifier):
+   
 
     # Dynamic endpoint selection
     if entity_type == "dataset":

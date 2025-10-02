@@ -1,0 +1,59 @@
+{
+  "platform": null,
+  "platform_resource_identifier": null,
+  "name": "The name of this resource",
+  "date_published": "2022-01-01T15:15:00.000",
+  "same_as": "https://www.example.com/resource/this_resource",
+  "is_accessible_for_free": true,
+  "version": "1.1.0",
+  "pid": "https://doi.org/10.1000/182",
+  "experimental_workflow": "1) Load the dataset 2) run preprocessing code found in ... 3) run the model on the data.",
+  "execution_settings": "string",
+  "reproducibility_explanation": "string",
+  "aiod_entry": null,
+  "alternate_name": [
+    "alias 1",
+    "alias 2"
+  ],
+  "application_area": [
+    "Fraud Prevention",
+    "Voice Assistance",
+    "Disease Classification"
+  ],
+  "badge": [
+    "ACM Artifacts Evaluated - Reusable"
+  ],
+  "citation": [],
+  "contact": [],
+  "creator": [],
+  "description": null,
+  "distribution": [],
+  "has_part": [],
+  "industrial_sector": [
+    "Pharmaceuticals",
+    "Computer Programming",
+    "Cybersecurity"
+  ],
+  "is_part_of": [],
+  "keyword": [
+    "keyword1",
+    "keyword2"
+  ],
+  "license": "CC-BY-4.0",
+  "media": [],
+  "note": [],
+  "relevant_link": [
+    "https://www.example.com/a_relevant_link",
+    "https://www.example.com/another_relevant_link"
+  ],
+  "relevant_resource": [],
+  "relevant_to": [],
+  "research_area": [
+    "AI Services",
+    "Multi-agent Systems"
+  ],
+  "scientific_domain": [
+    "Computer and Information Sciences",
+    "Mathematics"
+  ]
+}

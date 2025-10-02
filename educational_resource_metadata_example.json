@@ -1,0 +1,74 @@
+{
+  "platform": null,
+  "platform_resource_identifier": null,
+  "name": "The name of this resource",
+  "date_published": "2022-01-01T15:15:00.000",
+  "same_as": "https://www.example.com/resource/this_resource",
+  "time_required": "2 months",
+  "access_mode": [
+    "textual"
+  ],
+  "aiod_entry": null,
+  "alternate_name": [
+    "alias 1",
+    "alias 2"
+  ],
+  "application_area": [
+    "Fraud Prevention",
+    "Voice Assistance",
+    "Disease Classification"
+  ],
+  "contact": [],
+  "content": null,
+  "creator": [],
+  "description": null,
+  "educational_level": [
+    "primary school",
+    "secondary school",
+    "university"
+  ],
+  "has_part": [],
+  "in_language": [
+    "eng",
+    "fra",
+    "spa"
+  ],
+  "industrial_sector": [
+    "Pharmaceuticals",
+    "Computer Programming",
+    "Cybersecurity"
+  ],
+  "is_part_of": [],
+  "keyword": [
+    "keyword1",
+    "keyword2"
+  ],
+  "location": [],
+  "media": [],
+  "note": [],
+  "pace": "full-time",
+  "prerequisite": [
+    "undergraduate knowledge of statistics",
+    "graduate knowledge of linear algebra"
+  ],
+  "relevant_link": [
+    "https://www.example.com/a_relevant_link",
+    "https://www.example.com/another_relevant_link"
+  ],
+  "relevant_resource": [],
+  "relevant_to": [],
+  "research_area": [
+    "AI Services",
+    "Multi-agent Systems"
+  ],
+  "scientific_domain": [
+    "Computer and Information Sciences",
+    "Mathematics"
+  ],
+  "target_audience": [
+    "professionals",
+    "students in higher education",
+    "teachers in secondary school"
+  ],
+  "type": "presentation"
+}

@@ -10,12 +10,18 @@ def main():
     parser = argparse.ArgumentParser(description="AIoD metadata catalogue CLI")
     parser.add_argument('--entity', required=True, help="Entity to work on (ej: experiment, dataset, etc.)")
     
+    #add parse
     subparsers = parser.add_subparsers(dest="command")
 
     add_parser = subparsers.add_parser('add', help='Add new asset')
+
     add_parser.add_argument('--data', required=True, type=str, help='Asset`s metadata in JSON format')
 
+    #edit parsers
     edit_parser = subparsers.add_parser('edit', help='Edit existing asset')
+
+    edit_parser.add_argument('--id', required=True, type=str, help='ID of the asset to edit')
+    
     edit_parser.add_argument('--data', required=True, type=str, help='Asset`s metadata in JSON format')
 
     args = parser.parse_args()
@@ -34,13 +40,14 @@ def main():
     try: 
         entity_type = args.entity
         entity_data = json.loads(args.data)
+        edit_id = args.id
     except json.JSONDecodeError as e:
         print("Error decoding JSON:", e)
         exit(1)
     if args.command == 'add':
         add_asset(entity_type, entity_data, access_token)
     elif args.command == 'edit':
-        edit_asset(entity_type, entity_data, access_token)
+        edit_asset(entity_type, entity_data, access_token, edit_id)
 
 if __name__ == "__main__":
     main()

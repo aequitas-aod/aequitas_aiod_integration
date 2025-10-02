@@ -48,9 +48,7 @@ These instructions will get you a copy of the project up and running on your loc
     KEYCLOAK_SERVER_URL=http://localhost:8080
     KEYCLOAK_REALM=your-realm
     KEYCLOAK_CLIENT_ID=your-client-id
-    PROTECTED_API_URL=http://your-protected-api/endpoint
-    REF_TOKEN=<It will be automatically generated>
-    ACCESS=TOKEN=<It will be automatically generated>
+    PROTECTED_API_URL=http://your-protected-api/
     ```
 
     Replace the values with your Keycloak server URL, realm name, client ID, and the URL of the protected API you want to access.
@@ -58,9 +56,28 @@ These instructions will get you a copy of the project up and running on your loc
 
     
 2.  **Run the script:**
+   
+   To add a new asset:
+
     ```bash
-    python create_token.py
+    python  aiod_cli.py --entity <fill with entity> add --data '"$(cat <entity>_metadata.json)"'
     ```
+
+    To edit an asset:
+    
+      ```bash
+    python  aiod_cli.py --entity <fill with entity> edit --id <fill with the id> --data '"$(cat <entity>_metadata.json)"'
+    ```
+
+        the entity field might be:  
+        - dataset
+        - educational_resource
+        - experiment
+    
+        the edit parameter must be an existing asset ID
+
+  
+        the metadata.json must be filled acording to the type of entity (see the examples)
 
 3.  **Authorize the device:**
 
@@ -74,14 +91,7 @@ These instructions will get you a copy of the project up and running on your loc
 
     Open the `verification_uri` in a browser on another device (like a smartphone or computer) and enter the `user_code` to authorize the device.
 
-4.  **Token retrieval and API call:**
-
-    Once authorized, the script will obtain an access token from Keycloak, decode it, and use it to make a request to the `PROTECTED_API_URL`. The response from the protected API will be printed to the console.
-
-5. **Token Creation and refreshing**
-    Once created, the initial token only will be automatically refreshed if the process is not termined
-
-6. **Make the request to load a new asset or edit an existing**
+3. **Make the request to load a new asset or edit an existing**
     Run the desired script and uncomment the type of asset at the endpoint variable
 
 
