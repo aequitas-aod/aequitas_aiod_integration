@@ -74,7 +74,7 @@ These instructions will get you a copy of the project up and running on your loc
         - educational_resource
         - experiment
     
-        the edit parameter must be an existing asset ID
+        the id parameter must be an existing asset ID
 
   
         the metadata.json must be filled acording to the type of entity (see the examples)

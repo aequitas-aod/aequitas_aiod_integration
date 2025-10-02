@@ -40,7 +40,7 @@ def main():
     try: 
         entity_type = args.entity
         entity_data = json.loads(args.data)
-        edit_id = args.id
+        edit_id = args.id if args.command == 'edit' else None
     except json.JSONDecodeError as e:
         print("Error decoding JSON:", e)
         exit(1)
