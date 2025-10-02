@@ -8,6 +8,8 @@ from make_req_asset import add_asset, edit_asset
 
 def main():
     parser = argparse.ArgumentParser(description="AIoD metadata catalogue CLI")
+    parser.add_argument('--entity', required=True, help="Entity to work on (ej: experiment, dataset, etc.)")
+    
     subparsers = parser.add_subparsers(dest="command")
 
     add_parser = subparsers.add_parser('add', help='Add new asset')
@@ -29,11 +31,16 @@ def main():
 
     access_token = token_info["access_token"]
 
-    entity_data = json.loads(args.data)
+    try: 
+        entity_type = args.entity
+        entity_data = json.loads(args.data)
+    except json.JSONDecodeError as e:
+        print("Error decoding JSON:", e)
+        exit(1)
     if args.command == 'add':
-        add_asset(entity_data, access_token)
+        add_asset(entity_type, entity_data, access_token)
     elif args.command == 'edit':
-        edit_asset(entity_data, access_token)
+        edit_asset(entity_type, entity_data, access_token)
 
 if __name__ == "__main__":
     main()

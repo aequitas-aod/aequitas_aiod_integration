@@ -7,8 +7,18 @@ load_dotenv()
 
 PROTECTED_API_URL = os.getenv("PROTECTED_API_URL") 
 
-def add_asset(entity_data, token):
-    endpoint="v2/experiments"  #or v2/experiments or v2/datasets or v2/educational_resources
+def add_asset(entity_type, entity_data, token):
+    # Dynamic endpoint selection
+    if entity_type == "dataset":
+        endpoint="v2/datasets"
+    elif entity_type == "experiment":
+        endpoint="v2/experiments"
+    elif entity_type == "educational_resource":
+        endpoint="v2/educational_resources"
+    else:
+        print(f"Entity '{entity_type}' not supported.")
+        return
+    
     url = f"{PROTECTED_API_URL}/{endpoint}"
     headers = {
         "Accept": "application/json",
@@ -21,9 +31,20 @@ def add_asset(entity_data, token):
     else:
         print("Error creating asset:", response.text)
 
-def edit_asset(entity_data, token):
+def edit_asset(entity_type, entity_data, token):
     identifier="<id>"
-    endpoint="v2/experiments"  #or v2/experiments or v2/datasets or v2/educational_resources
+
+    # Dynamic endpoint selection
+    if entity_type == "dataset":
+        endpoint="v2/datasets"
+    elif entity_type == "experiment":
+        endpoint="v2/experiments"
+    elif entity_type == "educational_resource":
+        endpoint="v2/educational_resources"
+    else:
+        print(f"Entity '{entity_type}' not supported.")
+        return
+    
     url = f"{PROTECTED_API_URL}/{endpoint}/{identifier}"
     headers = {
         "Accept": "application/json",
