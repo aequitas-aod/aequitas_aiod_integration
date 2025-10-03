@@ -28,6 +28,15 @@ def add_asset(entity_type, entity_data, token):
     response = requests.post(url, json=entity_data, headers=headers)
     if response.ok:
         print("Asset created successfully", response.text)
+        responseAsJSON = response.json()
+        identifier = responseAsJSON['identifier']
+        print("Requesting the asset just created with identifier: ", identifier)
+        retrieveUrl = f"{PROTECTED_API_URL}/{endpoint}/{identifier}"
+        res = requests.get(retrieveUrl,headers=headers)
+        if res.ok:
+            print("res", res.text)
+        else:
+            print("Error retrieving asset:", res.text)
     else:
         print("Error creating asset:", response.text)
 
