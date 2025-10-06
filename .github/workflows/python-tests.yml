@@ -19,6 +19,15 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pytest requests-mock pytest-dotenv
+    
+    - name: Create .env file for tests
+      run: |
+        echo "KEYCLOAK_SERVER_URL=http://localhost:8080" >> .env
+        echo "KEYCLOAK_REALM=your-realm" >> .env
+        echo "KEYCLOAK_CLIENT_ID=your-client-id" >> .env
+        echo "PROTECTED_API_URL=http://localhost:8080/api" >> .env
+        echo "TESTING=0" >> .env
+
 
     - name: Run tests
       run: pytest --maxfail=1 --disable-warnings -q
