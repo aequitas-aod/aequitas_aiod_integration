@@ -26,7 +26,7 @@ jobs:
         echo "KEYCLOAK_REALM=your-realm" >> .env
         echo "KEYCLOAK_CLIENT_ID=your-client-id" >> .env
         echo "PROTECTED_API_URL=http://localhost:8080/api" >> .env
-        echo "TESTING=0" >> .env
+        echo "TESTING=1" >> .env
 
 
     - name: Run tests
