@@ -49,6 +49,7 @@ These instructions will get you a copy of the project up and running on your loc
     KEYCLOAK_REALM=your-realm
     KEYCLOAK_CLIENT_ID=your-client-id
     PROTECTED_API_URL=http://your-protected-api/
+    TESTING=1 # 0 disable testing, 1 enable testing
     ```
 
     Replace the values with your Keycloak server URL, realm name, client ID, and the URL of the protected API you want to access.
@@ -91,8 +92,16 @@ These instructions will get you a copy of the project up and running on your loc
 
     Open the `verification_uri` in a browser on another device (like a smartphone or computer) and enter the `user_code` to authorize the device.
 
-3. **Make the request to load a new asset or edit an existing**
-    Run the desired script and uncomment the type of asset at the endpoint variable
+4. **Run the tests**
+    Update the `.env` file and set 
+    ```bash
+    TESTING=1
+    ```
+    After that, execute:
+
+    ```bash
+    pytest tests
+    ```
 
 
 ## Environment Variables Definition
@@ -101,8 +110,7 @@ These instructions will get you a copy of the project up and running on your loc
 -   `KEYCLOAK_REALM`: The name of the Keycloak realm you are using.
 -   `KEYCLOAK_CLIENT_ID`: The ID of the client configured in Keycloak for this application.
 -   `PROTECTED_API_URL`: The URL of the protected API endpoint that the script will call with the access token.
--   `ACCESS_TOKEN`:It need to be created first
--   `REF_TOKEN`:It need to be created first
+-   `TESTING`: The variable that uses the mock for testing (1) or not (0).
 
 ## Dependencies
 
@@ -112,3 +120,8 @@ The project's dependencies are listed in the `requirements.txt` file:
 -   `python-keycloak`: A Python client for Keycloak.
 -   `PyJWT`: For decoding JSON Web Tokens (JWTs).
 -   `requests`: For making HTTP requests.
+-   `pytest`: For testing.
+-   `requests-mock`: For making HTTP requests in testing.
+-   `pytest-dotenv`: For managing environment variables in testing.
+
+
