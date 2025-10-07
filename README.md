@@ -38,8 +38,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Usage
 
-
-
 1.  **Configure the environment variables:**
 
     Create a `.env` file in the root of the project and add the following variables:
@@ -53,32 +51,27 @@ These instructions will get you a copy of the project up and running on your loc
     ```
 
     Replace the values with your Keycloak server URL, realm name, client ID, and the URL of the protected API you want to access.
-
-
     
 2.  **Run the script:**
    
-   To add a new asset:
+    To add a new asset:
 
     ```bash
     python  aiod_cli.py --entity <fill with entity> add --data '"$(cat <entity>_metadata.json)"'
     ```
 
     To edit an asset:
-    
-      ```bash
+
+    ```bash
     python  aiod_cli.py --entity <fill with entity> edit --id <fill with the id> --data '"$(cat <entity>_metadata.json)"'
     ```
 
-        the entity field might be:  
-        - dataset
-        - educational_resource
-        - experiment
-    
-        the id parameter must be an existing asset ID
+    where the entity field might be:  
+    - dataset
+    - educational_resource
+    - experiment
 
-  
-        the metadata.json must be filled acording to the type of entity (see the examples)
+    and the id parameter must be an existing asset ID and the `<entity>_metadata.json` must be filled acording to the type of entity (see the examples `<dataset|educational_resource|experiment>_metadata_example.json`)
 
 3.  **Authorize the device:**
 
